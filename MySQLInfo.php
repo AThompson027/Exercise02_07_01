@@ -20,10 +20,11 @@
     // if there is no connection then it will state an error
         if (!$DBConnect) {
             echo "<p>Connection failed.</p>\n";
-            // if connected then it will close the connection
         } else {
+            // this will display the host information from the server 
             echo "<p>MySQL connection: " . mysqli_get_host_info($DBConnect) . "</p>\n";
             echo "<p>Closing Database Connection.</p>\n";
+            // if connected then it will close the connection
             mysqli_close($DBConnect);
         }
     ?>
