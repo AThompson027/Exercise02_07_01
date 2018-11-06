@@ -7,7 +7,7 @@
     <title>Newsletter Subscribe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <script src="modernizr.custom.65897"></script>
 </head>
 
 <body>

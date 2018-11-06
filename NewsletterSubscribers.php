@@ -7,7 +7,7 @@
     <title>Newsletter Subscribe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <script src="modernizr.custom.65897"></script>
 </head>
 
 <body>
@@ -40,13 +40,25 @@ if (mysqli_select_db($DBConnect, $DBName)) {
     echo "<th>Subscriber Date</th>";
     echo "<th>Subscriber Confirm</th>";
     echo "</tr>";
+    //this fetches the row with the $result value in it. 
+    while ($row = mysqli_fetch_row($result)) {
+        // this will display the rows(data) of the table on the page
+        echo"<tr>";
+        echo "<td>{$row[0]}</td>";
+        echo "<td>{$row[1]}</td>";
+        echo "<td>{$row[2]}</td>";
+        echo "<td>{$row[3]}</td>";
+        echo "<td>{$row[4]}</td>";
+        echo "</tr>\n";
+    }
     echo "</table>\n";
+    // This will fetch rows from a result-set then free the memory associated with the result
     mysqli_free_result($result);
 }
     else {
     echo "Could not select the \"$DBName\"" . "database: " . mysqli_error($DBConnect) . " </p>\n";
 }
-    // when is doesn not connect then then it will disconnect
+    // when is does not connect then then it will disconnect
 
     echo "<p>Closing Database Connection.</p>\n";
     mysqli_close($DBConnect);
